@@ -15,7 +15,15 @@ class CustomEnvironment extends NodeEnvironment {
     this.connectionString = `${process.env.DATABASE_URL}${this.schema}`
   }
 
-  
+  setup() {
+    process.env.DATABASE_URL = this.connectionString
+    this.global.process.env.DATABASE_URL = this.connectionString
+
+    execSync(`${PRISMA_CLI} migrate dev`)
+  }
+
+  async teardown() {
+
 }
 
 module.exports = CustomEnvironment
