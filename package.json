@@ -9,7 +9,7 @@
     "build": "tsc && tsc-alias",
     "lint": "eslint ./src/** --fix --no-error-on-unmatched-pattern",
     "pretty": "prettier --no-error-on-unmatched-pattern --write --check ./src/**",
-    "coverage": "jest --coverage",
+    "coverage": "jest --coverage --passWithNoTests",
     "test": "jest --passWithNoTests --color",
     "test:dev": "jest --watchAll --color",
     "test:staged": "jest --findRelatedTests  --passWithNoTests --color .",
