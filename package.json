@@ -5,6 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --passWithNoTests --color"
+    "test:dev": "jest --watchAll --color",
+    
   },
   "keywords": [],
   "author": "",
