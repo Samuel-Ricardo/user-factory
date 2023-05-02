@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc && tsc-alias",
     "lint": "eslint ./src/** --fix",
     "pretty": "prettier --write --check ./src/**",
     "coverage": "jest --coverage",
-    "test": "jest --passWithNoTests --color"
+    "test": "jest --passWithNoTests --color",
     "test:dev": "jest --watchAll --color",
     "test:staged": "jest --findRelatedTests  --passWithNoTests --color ."
   },
