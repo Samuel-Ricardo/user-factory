@@ -5,12 +5,13 @@ import { v5 as uuid } from "uuid"
 export class UserRespositoryInMemory implements IUsersRepository {
   private users: User[] = []
 
-  exist(username: string): Promise<boolean> {
-    throw new Error("Method not implemented.")
+  async exist(username: string): Promise<boolean> {
+    const user = this.users.some((user) => user.name === username)
+    return user
   }
 
   async create(user: User): Promise<User> {
-    Object.assign(user, { id: uuid() })
+    user = { ...user, id: uuid() + "" }
     this.users.push(user)
     return user
   }
