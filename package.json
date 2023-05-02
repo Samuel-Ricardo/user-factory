@@ -31,6 +31,7 @@
     "lint-staged": "^13.2.2",
     "nodemon": "^2.0.22",
     "prisma": "^4.13.0",
+    "supertest": "^6.3.3",
     "ts-jest": "^29.1.0",
     "ts-node": "^10.9.1",
     "tsc-alias": "^1.8.6",
