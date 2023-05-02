@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretty": "prettier --write --check ./src/**",
     "coverage": "jest --coverage",
     "test": "jest --passWithNoTests --color"
     "test:dev": "jest --watchAll --color",
