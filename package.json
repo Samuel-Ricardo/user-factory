@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "coverage": "jest --coverage",
     "test": "jest --passWithNoTests --color"
     "test:dev": "jest --watchAll --color",
     "test:staged": "jest --findRelatedTests  --passWithNoTests --color ."
