@@ -6,7 +6,7 @@ export class UserRespositoryInMemory implements IUsersRepository {
   private users: User[] = []
 
   async exist(name: string): Promise<boolean> {
-    const user = this.users.some((user) => user.name === name)
+    const user = this.users.some((user) => user.username === name)
     return user
   }
 
