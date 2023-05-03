@@ -1,7 +1,7 @@
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
- */
+//  */
 
 export default {
   // All imported modules in your tests should be mocked automatically
@@ -90,6 +90,15 @@ export default {
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
   moduleNameMapper: {
     "@/(.*)": "<rootDir>/src/$1",
+    "@Types": "<rootDir>/src/@types/index.ts",
+    "@Types/*": "<rootDir>/src/@types//$1",
+    "@config": "<rootDir>/src/config/index.ts",
+    "@config/*": "<rootDir>/src/config/$1",
+    "@middleware": "<rootDir>/src/middleware/index.ts",
+    "@middleware/*": "<rootDir>/src/middleware/$1",
+    "@database": "<rootDir>/src/database/client.ts",
+    "@entity": "<rootDir>/src/entity/index.ts",
+    "@entity/*": "<rootDir>/src/entity/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
