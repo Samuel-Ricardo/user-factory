@@ -5,7 +5,6 @@
 import { IUsersRepository } from "@/repository/IUserRepository"
 import { PrismaUserRepository } from "@/repository/prisma/PrismaUserRepository"
 import { VALID } from "@config/consts"
-import { User } from "@entity"
 
 describe("Prisma User repository test", () => {
   let repository: IUsersRepository
