@@ -1,6 +1,6 @@
 import { User } from "@/entity"
 import { IUsersRepository } from "../IUserRepository"
-import { v5 as uuid } from "uuid"
+import { v4 as uuid } from "uuid"
 
 export class UserRespositoryInMemory implements IUsersRepository {
   private users: User[] = []
@@ -11,7 +11,9 @@ export class UserRespositoryInMemory implements IUsersRepository {
   }
 
   async create(user: User): Promise<User> {
-    user = { ...user, id: uuid() + "" }
+    user = User.create({ ...user })
+    user.id = uuid()
+
     this.users.push(user)
     return user
   }
