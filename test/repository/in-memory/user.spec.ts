@@ -1,9 +1,9 @@
-import { VALID } from "@/config/consts"
+import { VALID } from "@config"
 import { IUsersRepository } from "@/repository/IUserRepository"
 import { UserRespositoryInMemory } from "@/repository/in-memory/UserRepositoryInMemory"
 import { User } from "@entity"
 
-describe("User repository test", () => {
+describe("In Memory User repository test", () => {
   let repository: IUsersRepository
 
   beforeAll(() => {
