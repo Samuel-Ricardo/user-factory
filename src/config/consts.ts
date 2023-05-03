@@ -1,11 +1,9 @@
 import { IUserData } from "@Types"
 
-const USER: IUserData = {
-  name: "John",
-  username: "Johny",
-  email: "john@email.com",
-}
-
 export const VALID = {
-  USER,
+  USER: {
+    name: "John",
+    username: "Johny",
+    email: "john@email.com",
+  } as IUserData,
 }
