@@ -6,7 +6,7 @@ import { IUsersRepository } from "@/repository/IUserRepository"
 import { PrismaUserRepository } from "@/repository/prisma/PrismaUserRepository"
 import { VALID } from "@config/consts"
 
-describe("Prisma User repository test", async () => {
+describe("Prisma User repository test", () => {
   let repository: IUsersRepository
 
   beforeAll(() => {
