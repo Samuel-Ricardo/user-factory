@@ -17,7 +17,11 @@ class CustomEnvironment extends NodeEnvironment {
     this.schema = `code_schema_${uuid()}`
     console.log({ SCHEMAS: this.schema })
 
-    this.connectionString = `${process.env.DATABASE_URL}${this.schema}`
+    // out of docekr container
+    //this.connectionString = `${process.env.DATABASE_URL}${this.schema}`
+    
+    // inside of docker container
+    this.connectionString = `${process.env.DOCKER_DATABASE_URL}${this.schema}`
   }
 
   setup() {
