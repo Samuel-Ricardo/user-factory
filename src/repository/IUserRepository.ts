@@ -1,6 +1,7 @@
+import { IUserData } from "@Types"
 import { User } from "@entity"
 
 export interface IUsersRepository {
-  create(user: User): Promise<User>
+  create(user: IUserData): Promise<User>
   exist(username: string): Promise<boolean>
 }
