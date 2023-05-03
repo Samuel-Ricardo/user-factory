@@ -2,9 +2,9 @@ const NodeEnvironment = require("jest-environment-node").TestEnvironment
 const { execSync } = require("child_process")
 const { resolve } = require("path")
 const { Client } = require("pg")
-const { v5: uuid } = require("uuid")
+const { v4: uuid } = require("uuid")
 
-const PRISMA_CLI = "./node_modules/.bin/prisma"
+const PRISMA_CLI = "npx prisma"
 
 require("dotenv").config({
   path: resolve(__dirname, "..", ".env.test"),
