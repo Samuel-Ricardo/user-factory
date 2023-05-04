@@ -91,14 +91,15 @@ export default {
   moduleNameMapper: {
     "@/(.*)": "<rootDir>/src/$1",
     "@Types": "<rootDir>/src/@types/index.ts",
-    "@Types/*": "<rootDir>/src/@types//$1",
+    "@Types/(.*)": "<rootDir>/src/@types//$1",
     "@config": "<rootDir>/src/config/index.ts",
-    "@config/*": "<rootDir>/src/config/$1",
+    "@config/(.*)": "<rootDir>/src/config/$1",
     "@middleware": "<rootDir>/src/middleware/index.ts",
-    "@middleware/*": "<rootDir>/src/middleware/$1",
+    "@middleware/errors": "<rootDir>/src/middleware/errors.ts",
+    "@middleware/(.*)": "<rootDir>/src/middleware/$1",
     "@database": "<rootDir>/src/database/client.ts",
     "@entity": "<rootDir>/src/entity/index.ts",
-    "@entity/*": "<rootDir>/src/entity/$1",
+    "@entity/(.*)": "<rootDir>/src/entity/$1",
   },
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
@@ -144,7 +145,7 @@ export default {
   // setupFiles: [],
 
   // A list of paths to modules that run some code to configure or set up the testing framework before each test
-  // setupFilesAfterEnv: [],
+  setupFilesAfterEnv: ["./jest.setup.ts"],
 
   // The number of seconds after which a test is considered as slow and reported as such in the results.
   // slowTestThreshold: 5,
