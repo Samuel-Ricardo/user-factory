@@ -1,1 +1,5 @@
-export const UserAlredyExists = new Error("User already exists")
+export class UserAlredyExists extends Error {
+  constructor() {
+    super("User alredy exists")
+  }
+}
