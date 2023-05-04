@@ -1,14 +1,14 @@
 import { IUsersRepository } from "@/repository/IUserRepository"
 import { IUserData } from "@Types"
-import { UserAlredyExists } from "@config/errors"
 import { User } from "@entity"
+import { ERROR } from "@config"
 
 export class CreateUserService {
   constructor(private repository: IUsersRepository) {}
 
   async execute({ name, username, email }: IUserData) {
     if (await this.repository.exist(username)) {
-      throw UserAlredyExists
+      throw new ERROR.UserAlredyExists()
     }
 
     const model = User.create({ name, username, email })
