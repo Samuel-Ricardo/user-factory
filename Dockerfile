@@ -10,7 +10,7 @@ RUN npm install
 
 USER node
 
-RUN chown $USER:$USER -R /home/node/app/prisma
+RUN chown $USER:$USER -R /home/node/app/prisma 
 RUN chown $USER:$USER -R /home/node/app/node_modules/.prisma/client
 
 CMD ["npm", "run", "docker:startup"]
