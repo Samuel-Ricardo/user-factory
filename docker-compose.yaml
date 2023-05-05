@@ -24,3 +24,19 @@ services:
       - .docker/postgres:/data/postgres
     ports:
       - 5432:5432
+
+  pgadmin:
+    container_name: pgadmin_container
+    image: dpage/pgadmin4
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL:-pgadmin4@pgadmin.org}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD:-admin}
+      PGADMIN_CONFIG_SERVER_MODE: "False"
+    volumes:
+      - .docker/pgadmin:/database/admin/pgadmin
+
+    ports:
+      - "${PGADMIN_PORT:-5050}:80"
