@@ -10,6 +10,15 @@ services:
     depends_on:
       - postgres
 
+  tests:
+    container_name: application_tests
+    build: .
+    command: npm run coverage
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - app
+
   postgres:
     container_name: postgres_container
     image: postgres
